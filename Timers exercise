@@ -1,0 +1,32 @@
+function countDown(num){
+    let countdown = setInterval (function(){
+        num--;
+        if (num == 0){
+            clearInterval(countdown);
+            console.log("Done!")
+        }
+        else {
+            console.log(num);
+        }
+    }, 1000)
+}
+
+
+
+
+
+function randomGame(){
+    let number;
+    let count = 0;
+    let counter = setInterval (function(){
+        count ++
+        number = Math.random();
+        if (number > .75){
+            clearInterval(counter);
+            console.log(count)
+        }
+
+
+
+    }, 1000)
+}
