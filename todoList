@@ -1,0 +1,60 @@
+// HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Todos.css">
+    
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <form id="form">
+        <label for="task">Task:</label>
+        <input type='input' id="task" name="task">
+        <input type ='submit' id="submit" name="submit">
+    </form>
+    <ul>
+    </ul>
+    <script src="Todos.js"></script>    
+</body>
+</html>
+
+// JS
+
+const form = document.querySelector('form');
+const taskList = document.querySelector('ul');
+const input = document.querySelector('#task');
+const removeTask = document.querySelectorAll('li button');
+
+taskList.addEventListener('click', function(e){
+    if (e.target.tagName === 'BUTTON'){
+        e.target.parentElement.remove();
+    }
+    else if (e.target.tagName === "LI") {
+        e.target.classList.toggle('completed');
+    }
+})
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const newTask = document.createElement('li');
+    const removeButton = document.createElement('button');
+    removeButton.innerText = 'Remove Task';
+    newTask.innerText = input.value;
+    newTask.appendChild(removeButton);
+    taskList.appendChild(newTask);
+})
+
+// CSS
+
+.completed {
+text-decoration: line-through;
+}
+
+button {
+    margin-left: 1em;
+}
