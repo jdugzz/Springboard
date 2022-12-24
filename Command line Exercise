@@ -1,0 +1,20 @@
+mkdir first
+cd first
+touch person.txt
+mv person.txt another.txt
+cp another.txt copy.txt
+rm copy.txt
+cp -r first second
+rmdir second
+
+man command pulls up manual based on whatever command is typed after. scroll with up/down arrow, exit with q
+ls -I ignores certain entries; -a does not ignore entries starting with .
+to jump between words, press alt + left or right arrow
+press ctrl + e to move to end of a line 
+press ctrl + a to move to beginning of a line
+press ctrl + w to delete a word 
+the shell is the name of the program that runs the terminal
+an absolute path is the way to get to a file starting from the root
+relative path is a way to get to a file without starting from the root, i.e., cd home
+a flag is a modification to a command. I have used -a, -l, -r
+-f forces an ignore of nonexistent files and arguments, -r removes directories and their contents recursively 
