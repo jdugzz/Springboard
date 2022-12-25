@@ -1,0 +1,5 @@
+git branch branchname
+a recursive merge creates new commist on the master, commits 2 parents, and creates a merge commit.
+git checkout branchname
+git branch -d branchname
+Merge conflicts happen when people make different changes to the same line of the same file
