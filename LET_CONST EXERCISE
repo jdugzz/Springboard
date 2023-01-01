@@ -1,0 +1,15 @@
+ES5 Global Constants
+const PI = 3.14;
+PI = 42; <-- this will throw an error
+
+What is the difference between VAR and LET? 
+  Var can be reassigned and redeclared. Let cannot be redeclared. Additionally, let cannot be hoisted and creates a block scope.
+  
+What is the difference between VAR and CONST?
+  Var can be reassigned and redeclared, CONST cannot. Const is not hoisted, and it creates a block scope.
+  
+What is the difference between LET and CONST?
+  Let can be reassigned, but const cannot.
+
+What is hoisting?
+  Hoisting is when variables are lifted or hoisted to the top of the scope they are declared in - this only works with var.
