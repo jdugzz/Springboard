@@ -1,0 +1,27 @@
+//Obj Destructuring 1
+//will return 8 and 1846
+
+//Obj Destructuring 2
+//will return 1846 and 1659
+
+//Obj Destructuring 3
+//will return Alejandro/purple, Melissa/green, and undefined/green
+
+//Array Destructuring 1
+//maya, marisa, chi
+
+//Array Destructuring 2
+//Raindrops on roses, whiskers on kittens, the rest of the array
+
+//Array Destructuring 3
+//10, 30, 20
+
+//Assigning Variables to Object Properties
+const { a, b } = obj.numbers
+
+//Array Swap
+[arr[0], arr[1]] = [arr[1], arr[0]]
+
+//raceResults()
+
+const raceResults = ([first, second, third, ...rest]) => {first, second, third, rest}
