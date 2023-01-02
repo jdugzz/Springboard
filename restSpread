@@ -1,0 +1,57 @@
+// Given this function
+function filterOutOdds() {
+    var nums = Array.prototype.slice.call(arguments);
+    return nums.filter(function(num) {
+        return num % 2 === 0
+    });
+}
+
+//Refactor it to use the rest operator and an arrow function:
+
+function filterOutOdds(...nums) {
+    return nums.filter((nums) => num % 2 === 0)
+}
+
+//Write a function called findMin that accepts a variable number of arguments and returns the smalles argument.
+
+function findMin(...nums){
+    return Math.min(...nums)
+}
+
+//Write a function called mergeObjects that accepts two objects and returns a new object which contains all the keyes and values of the first object and second object
+const mergeObject = (obj1, obj2) => ({...obj1, ...obj2})
+
+//doubleAndReturnArgs
+const doubleAndReturnArgs = (arr, ...val) => [...arr, ...val.map(v => v*2 )]
+
+//Slice and Dice
+const randomItem = (items) => {
+    const itemsCopy = [...items]
+    let selectorNum = Math.floor(Math.random() * items.length) - 1
+    return itemsCopy.splice(selectorNum, 1);
+}
+
+const concatArr = (arr1, arr2) => {
+    return [...arr1, ...arr2]
+}
+
+const newObj = (obj, key, val) =>  {
+    let newObj = {...obj}
+    newObj[key] = val;
+    return newObj
+}
+
+const remKey = (obj, key) => {
+    let newObj = {...obj}
+    delete newObj[key];
+    return newObj;
+}
+
+const concatObj = (obj1, obj2) => {
+    let newObj = {...obj1, ...obj2}
+    return newObj
+}
+
+const newKeyVal = (obj, key, val) => {
+return {...obj, [key]:val}
+}
