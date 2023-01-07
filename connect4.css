@@ -17,8 +17,12 @@
   /* background-color: red; */
 }
 
-.p1 {
+.one {
   background-color: red;
+}
+
+.two {
+  background-color: blue;
 }
 
 .p2 {
