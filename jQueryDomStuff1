@@ -98,3 +98,58 @@
 </body>
 
 </html>
+
+//MOVIE APP
+
+//HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+<h1>Movie App the Game</h1>
+<h6>not a game</h6>
+<ul></ul>
+<form id="form">
+<label for="movieTitle">Movie Title</label>
+<input type="text" id="movieTitle" class="input"> <br>
+<label for="rating">Rating</label>
+<input type="range" id="rating" class="input" min="1" max="10" name="rating"> <br>
+<button class="addMovie">Add Movie</button>
+
+
+</form>
+
+
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>
+</html>
+
+//JS
+
+$('.addMovie').on('click', function(e) {
+    e.preventDefault();
+    const title = $('#movieTitle').val();
+    const rating = $('#rating').val();
+    if (title.length < 2){
+        alert('Movie Title must be at least two characters.');
+        $('#movieTitle').val('');
+        $('#rating').val('');
+        throw new Error('Movie Title must be at least two characters.');
+    }
+    $('ul').append(`<li class='entry'>${title} : ${rating}</li> <button class="remove">Remove</button>`)
+    $('#movieTitle').val('');
+    $('#rating').val('');
+})
+
+$('ul').on('click', 'button', function(e) {
+    e.preventDefault();
+    $(this).prev().remove();
+    $(this).remove();
+})
