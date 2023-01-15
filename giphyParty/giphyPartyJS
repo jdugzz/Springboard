@@ -1,0 +1,38 @@
+console.log("Let's get this party started!");
+
+const $searchTerm = $('#input');
+const $newDiv = $("#gif-holder");
+function addGif(res) {
+    
+    let numRes = res.data.length;
+    console.log(numRes)
+    if (numRes) {
+        let randomIdx = Math.floor(Math.random() * numRes);
+        let $newSpot = $("<div>", {class: "col-md-4 col-12 mb-4"});
+        let $newGif = $("<img>", {src: res.data[randomIdx].images.original.url, class: 'w-100'});
+        $newSpot.append($newGif);
+        $newDiv.append($newSpot);
+    }
+}
+
+
+
+
+
+$('form').on('submit', async function(e){
+    e.preventDefault();
+    let searchInput = $searchTerm.val();
+    $searchTerm.val('');
+    const res = await axios.get("http://api.giphy.com/v1/gifs/search", {
+        params: {
+            q: searchInput,
+            api_key: "MhAodEJIJxQMxW9XqxKjyXfNYdLoOIym"
+        } 
+    })
+    addGif(res.data);
+})
+
+$('#remove').on('click', function(e){
+    e.preventDefault();
+    $newDiv.empty();
+})
