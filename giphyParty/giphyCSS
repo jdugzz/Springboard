@@ -1,0 +1,57 @@
+h1 {
+    position: relative;
+    text-align: center;
+    letter-spacing: 1rem;
+    color: #e27D60;
+}
+
+form {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#gif-holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-content: space-around;
+}
+
+img {
+    max-width: 350px;
+    max-height: 350px;
+}
+
+.gif-hidden {
+    opacity: 0;
+    margin: 5px;
+}
+
+.gif-visible {
+    opacity: 1;
+    transition: opacity 1s;
+    margin: 5px;
+}
+
+body {
+    background: #41B3A3;
+    background-size: cover;
+}
+
+#submit {
+    border-radius: 3px;
+    background-color: #E27D60;
+}
+
+#remove {
+    border-radius: 3px;
+    background-color: #E27D60;
+}
+
+#input {
+    background-color: #E27D60;
+}
+
+#input:focus {
+    box-shadow: 0 0 10px #9ecaed;   
+}
