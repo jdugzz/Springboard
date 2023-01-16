@@ -5,13 +5,15 @@ const $newDiv = $("#gif-holder");
 function addGif(res) {
     
     let numRes = res.data.length;
-    console.log(numRes)
     if (numRes) {
         let randomIdx = Math.floor(Math.random() * numRes);
-        let $newSpot = $("<div>", {class: "col-md-4 col-12 mb-4"});
-        let $newGif = $("<img>", {src: res.data[randomIdx].images.original.url, class: 'w-100'});
+        let $newSpot = $("<div>", {class: "col-4"});
+        let $newGif = $("<img>", {src: res.data[randomIdx].images.original.url, class: 'gif-hidden'});
         $newSpot.append($newGif);
         $newDiv.append($newSpot);
+        setInterval(function() {
+            $newGif.addClass('gif-visible')
+        }, 100)
     }
 }
 
