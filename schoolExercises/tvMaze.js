@@ -80,7 +80,7 @@ async function populateEpisodes(e) {
   const epiData = await getEpisodes(showId);
   for (let epi of epiData) {
     const $episode = $(
-      `<li> ${epi.name} (Season ${epi.season}, Episode ${epi.number}) </li>`;
+      `<li> ${epi.name} (Season ${epi.season}, Episode ${epi.number}) </li>`
     )
     $episodesList.append($episode);
   }
