@@ -1,0 +1,68 @@
+h1 {
+  text-align: center;
+  font-size: 3em;
+  color: #FFE800
+}
+
+h6 {
+  text-align: center;
+  font-size: 1em;
+  color: #FFE800
+}
+
+body {
+  background-color: #00003D;
+}
+
+td {
+  width: 15vw;
+  height: 11vh;
+  table-layout: fixed;
+  text-align: center;
+  vertical-align: center;
+  color: #FFE800
+}
+
+.bodyCell {
+  background-color: #115ff4;
+}
+
+#tHRow {
+  background-color: #060ce9
+}
+
+table {
+  table-layout: fixed;
+  overflow: hidden;
+  margin: auto;
+}
+
+#btnHolder {
+  text-align: center;
+}
+
+#loadingHolder {
+  display: flex;
+  justify-content: center;
+}
+
+#game-holder {
+  margin: auto;
+}
+
+img {
+  position: absolute;
+  justify-content: center;
+}
+
+#game-space{
+  margin: auto;
+}
+
+#restart {
+  background-color: #060ce9;
+  color: #FFE800;
+  width: 15%;
+  height: 15%;
+  font-size: 1.4em;
+}
