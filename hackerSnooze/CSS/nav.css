@@ -1,0 +1,41 @@
+nav {
+  display: flex;
+  background-color: #ff6600;
+  align-items: center;
+  padding: 5px 20px;
+  border-radius: 3px 3px 0 0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.nav-link {
+  font-size: 0.85rem;
+  margin: 0 3px;
+}
+
+.nav-right {
+  margin-left: auto;
+  text-align: right;
+}
+
+.close {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.submit {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#url {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+#nav-user-profile {
+  font-size: 1rem;
+  
+}
