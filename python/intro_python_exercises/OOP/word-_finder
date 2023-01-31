@@ -1,0 +1,27 @@
+import random
+
+class WordFinder:
+    '''Word Finder class that iterates through a file and returns the words'''
+    def __init__(self, path):
+        '''opens the file, creates a words variable after parsing the file'''
+        dict_file = open(path, 'r')
+
+        self.words = self.parse(dict_file)
+
+        print(f'{len(self.words)} words read')
+    
+    def parse(self, dict_file):
+        '''return a list of the words in the file after removing leading/trailing whitespace'''
+        return [w.strip() for w in dict_file]
+
+    def random(self):
+        '''randomly select a word and return it'''
+        text = random.choice(self.words)
+        return text
+
+class SpecialWordFinder(WordFinder):
+    '''gets words while omitting blank lines and comments'''
+
+    def parse(self, dict_file):
+    '''iterates through file, ommitting all blank lines and refusing to select for comments'''
+        return[w.strip() for w in dict_file if w.strip() and not w.startswith('#')]
