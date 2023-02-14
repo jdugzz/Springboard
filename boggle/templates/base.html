@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <title>{% block title %}Boggle{% endblock %}</title>
+</head>
+<body>
+    <div id="body_holder">
+    <div id="table">
+    <table class="board">
+    <tbody>
+    {% for row in board %}
+    <tr>
+    {% for cell in row %}
+    <td>{{cell}}</td>
+    {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+    <div id="sub_holder" class="left-side">
+    <div id="score" class="left-side">Score:</div>
+    <div id="timer" class="left-side">Time Remaining: 60</div>
+    <div id="times_played" class="left-side">Times Played: {{play_time}}</div>
+    <div id="high_score" class="left-side">High Score: {{high_score}}</div>
+    </div>
+    <div id='list'>
+        <div id="used_words" class="right-side">Valid Words: </div>
+        <div id='invalid_words' class="right-side"> Invalid Words:</div>
+    </div>
+    </div>
+    <div id="form_holder">
+    <form id ='submit_form' action="">
+        <label for="text">Guess: </label>
+        <input type="text" id="text" name="word">
+        <button id="submit">Guess</button>
+    </form>
+    </div>
+    
+    <div id="msg-holder-holder">
+    <div id="msg-holder"></div>
+    </div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src={{url_for('static', filename='app.js')}}></script>
+</body>
+</html>
