@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+   <h1>Currency Converter</h1> 
+   <form id="main_form" action="/convert">
+    <label for="c_from">Converting From:</label>
+        <input type="text" name="c_from" id="c_from"><br>
+    <label for="c_to">Converting To:</label>
+        <input type="text" name="c_to" id="c_to"> <br>
+    <label for="amount">Amount:</label>
+        <input type="text" name="amount" id="amount"> <br>
+    <button id="submit">Submit</button>
+   </form>
+   {% if valid != None %}
+
+   {% if valid == 0%}
+   <p>Not a valid amount.</p>
+   
+   {% endif %}
+   {%if valid == 3 %}
+   <p>The result is {{sym}}{{conv_val}}</p>
+   
+   {% endif %}
+   {%if valid == 2 %}
+   <p>{{conv_to}} is not a valid code.</p>
+   
+   {% endif %}
+   {%if valid == 1 %}
+   <p>{{conv_from}} is not a valid code.</p>
+   
+   {% endif %}
+   {%if valid == -1 %}
+   <p>{{conv_to}} and {{conv_from}} are not valid codes.</p>
+   
+   {% endif %}
+   <form action="/"><button>Home</button></form>
+   {% endif %}
+   
+</body>
+</html>
