@@ -1,0 +1,16 @@
+-- SELECT * FROM analytics WHERE id = 1880;
+-- SELECT id, app_name FROM analytics WHERE last_updated = 'August 01, 2018';
+-- SELECT category, COUNT(*) FROM analytics GROUP BY category;
+--SELECT * FROM analytics ORDER BY reviews DESC LIMIT 5;
+-- SELECT * FROM analytics WHERE rating >= 4.8 ORDER BY reviews DESC LIMIT 1;
+--SELECT category, AVG(rating) FROM analytics GROUP BY category ORDER BY AVG(rating) DESC;
+-- SELECT app_name, price, rating FROM analytics WHERE rating < 3 ORDER BY price DESC LIMIT 1;
+-- SELECT * FROM analytics WHERE min_installs <=50 AND NOT rating = 0 ORDER BY rating DESC;
+-- SELECT app_name FROM analytics WHERE rating < 3 AND reviews >= 10000;
+-- SELECT * FROM analytics WHERE price BETWEEN .10 AND 1.00 AND rating != 0 ORDER BY reviews DESC LIMIT 10;
+-- SELECT * FROM analytics ORDER BY last_updated LIMIT 1;
+-- SELECT * FROM analytics ORDER BY price DESC LIMIT 1;
+-- SELECT SUM(reviews) FROM analytics;
+-- SELECT category FROM analytics GROUP BY category HAVING COUNT(*) > 300;
+-- SELECT app_name, reviews, min_installs, min_installs/reviews AS proportion FROM 
+-- analytics WHERE min_installs >= 100000 ORDER BY proportion DESC LIMIT 1;
