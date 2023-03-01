@@ -63,6 +63,7 @@ def user_info_edit(user_id):
 
 @app.route('/users/<user_id>/delete', methods=["POST"])
 def delete_user(user_id):
+    """remove a user from the database"""
     user = User.query.filter_by(id=user_id).first()
     db.session.delete(user)
     db.session.commit()
