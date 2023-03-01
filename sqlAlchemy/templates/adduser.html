@@ -1,0 +1,16 @@
+{%extends 'userlist.html'%}
+{%block title%}Add a User{%endblock%}
+{%block content%}
+<h1>Create a new User</h1>
+<div>
+<form action="/users/add" method="POST">
+    <label for="first_name">First Name</label><br>
+    <input type="text" name="first_name" id="first_name" placeholder="Enter a First Name"><br>
+    <label for="last_name">Last Name</label><br>
+    <input type="text" name="last_name" id="last_name" placeholder="Enter a Last Name"><br>
+    <label for="img_url">Image URL</label><br>
+    <input type="text" name="img_url" id="img_url" placeholder="Enter a URL"><br>
+    <button>Add</button>
+</form>
+</div>
+{%endblock%}
