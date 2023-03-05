@@ -1,0 +1,14 @@
+{%extends 'userlist.html'%}
+{%block content%}
+<h1>Check out our Users!!</h1>
+<h4>Or you can see their posts...</h4>
+
+<h3><a href="/users">Users</a></h3>
+
+<h3>See Some dank posts</h3>
+<ul>
+    {%for post in posts%}
+    <li><a href='/posts/{{post.id}}'>{{post.title}}</a></li>
+    {%endfor%}
+</ul>
+{%endblock%}

@@ -1,0 +1,17 @@
+{% extends 'userlist.html' %}
+{%block title%}{{post.title}}{%endblock%}
+
+{%block content%}
+<h1>{{post.title}}</h1>
+<h4>Posted by: {{user.first_name}} {{user.last_name}} on {{post.created_at.month}}/{{post.created_at.day}}/{{post.created_at.year}} at {{post.created_at.hour}}:{{post.created_at.minute}}.</h4>
+<p>{{post.content}}</p>
+<form action="/posts/posts/{{post.id}}/edit">
+    <button>Edit</button>
+</form>
+<form action="/{{post.id}}/delete" method="POST">
+    <button>Delete</button>
+</form>
+<form action="{{ url_for('users', user_id=user.id) }}">
+    <button>Go back</button>
+</form>
+{%endblock%}
