@@ -1,0 +1,18 @@
+{%extends 'userlist.html'%}
+{%block content%}
+<h1>See Our Beautiful Tags!!</h1>
+<ul>
+    {% for tag in tags %}
+    <li>{{tag.tag_name}}</li>
+    {% endfor %}
+</ul>
+<form action="/tags/add">
+    <button>Add a New Tag</button>
+</form>
+<form action="/tags/edit">
+    <button>Edit an Existing Tag</button>
+</form>
+<form action="/">
+    <button>Go Home</button>
+</form>
+{%endblock%}

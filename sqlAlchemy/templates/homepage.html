@@ -1,0 +1,22 @@
+{%extends 'userlist.html'%}
+{%block content%}
+<div class="container-fluid"></div>
+<h1 class="display-2">Check out our Users!!</h1>
+
+
+<h2><a href="/users">Users</a></h3>
+
+<h3>See Some dank posts</h3>
+<div class="w-25">
+<ul class="list-group">
+    {%for post in posts%}
+    <span class="border">
+    <li class="'list-group-item list-group-item-action"><a href='/posts/{{post.id}}'>{{post.title}}</a></li>
+    </span>
+    {%endfor%}
+</ul>
+</div>
+
+<h3>Interested in tags are you?</h3>
+<p><a href='/tags'>See our tags</a></p>
+{%endblock%}

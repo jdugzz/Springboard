@@ -1,0 +1,23 @@
+{%extends 'userlist.html'%}
+{%block title%}Edit and Existing Tag{%endblock%}
+
+{% block content %}
+<h1>Edit an Existing Tag </h1>
+{%include 'messages.html'%}
+<form action="/tags/edit" method="POST">
+    <label for="edit-tag-name">Name:</label>
+    <input type="text" name="edit-tag-name">
+    <button>Edit</button>
+    <ul>
+    {%for tag in tags%}
+    <li>
+    <input type="radio" name='tag_name' value="{{tag.id}}">
+    <label for="tag_name">{{tag.tag_name}}</label>
+    </li>
+    {%endfor%}
+    </ul>
+</form>
+<form action="/">
+    <button>Go Home</button>
+</form>
+{% endblock %}

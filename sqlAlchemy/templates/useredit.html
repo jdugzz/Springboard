@@ -1,0 +1,21 @@
+{%extends 'userlist.html'%}
+{%block title%}{{user.first_name}} {{user.last_name}} Edit{%endblock%}
+
+{%block content%}
+<img src="{{user.image_url}}" alt="User Profile Picture">
+<h1>{{user.first_name}} {{user.last_name}}</h1>
+{%include 'messages.html'%}
+<form action="/{{user.id}}/edit" method="POST">
+    <label for="first_name">First Name</label><br>
+    <input type="text" name="first_name" id="first_name" value="{{user.first_name}}" required><br>
+    <label for="last_name">Last Name</label><br>
+    <input type="text" name="last_name" id="last_name" value="{{user.last_name}}" required><br>
+    <label for="img_url">Image URL</label><br>
+    <input type="text" name="img_url" id="img_url" value="{{user.image_url}}"><br>
+    <button>Edit</button>
+</form>
+<form action="/users/{{user.id}}">
+    <button>Cancel</button>
+</form>
+
+{%endblock%}
