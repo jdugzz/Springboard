@@ -1,0 +1,37 @@
+{% extends 'homepage.html' %}
+{%block title%} {{pet.name}}'s Details {%endblock%}
+
+{% block content %}
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>{{pet.name}}'s Details</h1>
+        <div class="row">
+            <div class="col">
+                <img src="{{pet.photo_url}}" class="img-fluid">
+                <p>{{pet.name}} is a {{pet.species}}</p>
+                <p>{{pet.age}} years old</p>
+            </div>
+            <div class="col">
+                <p>{{pet.notes}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="my-2">
+<h3>Edit {{pet.name}}'s Details</h3>
+<form action="/{{pet.id}}" method="POST">
+{{form.hidden_tag()}}
+{% for field in form
+    if field.widget.input_type != 'hidden' %}
+    <p>
+        {{field.label}}
+        {{field}}
+        {% for err in field.errors %}
+        {{err}}
+        {% endfor %}
+    </p>
+    {% endfor %}
+    <button>Edit Pet</button>
+    </form>
+{% endblock %}
