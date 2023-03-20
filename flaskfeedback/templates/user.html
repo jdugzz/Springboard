@@ -1,0 +1,20 @@
+{% if session['username'] %}
+    <p><a href='/logout'>Log Out</a></p>
+    {% endif %}
+    {% block content %}
+    <h1>{{user.username}}'s Page</h1>
+    
+    <ul>
+        <li>{{user.username}}</li>
+        <li>{{user.email}}</li>
+        <li>{{user.first_name}}</li>
+        <li>{{user.last_name}}</li>
+    </ul>
+    <form action="/users/{{user.username}}/feedback/add">
+        <button type="submit">Add Feedback</button>
+    </form>
+    <form action="/users/{{user.username}}/delete", method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    
+    {% endblock %}
